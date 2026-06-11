@@ -1,136 +1,107 @@
-<div align="center">
-
 # 📊 Token Portfolio Dashboard
 
-A beautiful cryptocurrency portfolio tracker built with React and Vite.
+A beautiful, real-time cryptocurrency portfolio tracker with multi-currency support, P&L analytics, and CoinGecko API integration.
 
-Track your crypto holdings, monitor prices, and calculate profits in real-time.
+![React](https://img.shields.io/badge/React-18-61DAFB?style=flat-square&logo=react)
+![Vite](https://img.shields.io/badge/Vite-5-646CFF?style=flat-square&logo=vite)
+![CoinGecko](https://img.shields.io/badge/API-CoinGecko-8DC647?style=flat-square&logo=coingecko)
+![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
 
-[![Live Demo](https://img.shields.io/badge/Live_Demo-GitHub_Pages-blue?style=for-the-badge)](https://rizaahmad25.github.io/token-portfolio-dashboard/)
+## ✨ Features
 
-</div>
+- 📈 **Real-time Price Tracking** — Live prices from CoinGecko API, auto-refresh every 60 seconds
+- 💰 **Multi-Currency Support** — USD, IDR, EUR, BTC, ETH display currencies
+- 📊 **P&L Analytics** — Track profit/loss per token with buy price entry
+- 🔍 **Token Search** — Search any token on CoinGecko with autocomplete
+- ⭐ **Quick Add** — Popular tokens (BTC, ETH, SOL, etc.) available with one click
+- 💾 **Local Storage** — Portfolio persists in browser localStorage
+- 📱 **Responsive Design** — Works on desktop and mobile
+- 🌙 **Dark Theme** — Beautiful dark UI optimized for extended use
+- 📋 **Portfolio Summary** — Total value, cost basis, 24h change, and overall P/L
 
----
-
-## 📸 Features
-
-- ➕ **Add tokens** — Search any cryptocurrency and add to portfolio
-- 💰 **Track value** — Real-time price updates every 60 seconds
-- 📈 **Profit/Loss** — Calculate P/L with buy price tracking
-- 💱 **Multi-currency** — USD, IDR, EUR, BTC, ETH
-- 💾 **Persistent** — Holdings saved in localStorage
-- 🔍 **Search** — Find any coin via CoinGecko API
-- 🌙 **Dark theme** — Beautiful dark UI
-- 📱 **Responsive** — Works on desktop and mobile
-
-## 🛠️ Tech Stack
-
-| Technology | Purpose |
-|------------|---------|
-| React 18 | UI Framework |
-| Vite | Build tool & dev server |
-| CoinGecko API | Cryptocurrency data |
-| localStorage | Data persistence |
-| CSS3 | Styling (dark theme) |
-
-## 🚀 Getting Started
-
-### Prerequisites
-- Node.js 16+ installed
-
-### Installation
+## 🚀 Quick Start
 
 ```bash
-# Clone the repository
+# Clone
 git clone https://github.com/rizaahmad25/token-portfolio-dashboard.git
 cd token-portfolio-dashboard
 
-# Install dependencies
+# Install
 npm install
 
-# Start development server
+# Run dev server
 npm run dev
-```
 
-### Build for Production
-
-```bash
+# Build for production
 npm run build
 ```
 
-## 📁 Project Structure
+## 📸 Screenshots
+
+### Portfolio Overview
+Track all your crypto holdings in one place with real-time price updates.
+
+### Add Tokens
+Search any cryptocurrency or pick from popular tokens with one click.
+
+### P&L Analytics
+Enter buy prices to track profit/loss per position with percentage calculations.
+
+## 🏗️ Architecture
 
 ```
-token-portfolio-dashboard/
-├── index.html          # Entry HTML
-├── package.json        # Dependencies
-├── vite.config.js      # Vite configuration
-├── public/             # Static assets
-│   └── vite.svg
-└── src/
-    ├── main.jsx        # React entry point
-    ├── App.jsx         # Main application component
-    ├── App.css         # App styles
-    └── index.css       # Global styles
+src/
+├── main.jsx          # Entry point
+├── App.jsx           # Main application (370+ lines)
+│   ├── Portfolio Summary (total value, cost, P/L)
+│   ├── Holdings Table (per-token analytics)
+│   ├── Add Token Modal (search + quick add)
+│   └── Multi-currency selector
+├── App.css           # Component styles
+└── index.css         # Global styles & dark theme
 ```
 
-## 🔧 API Reference
+## 🔧 Tech Stack
 
-This project uses the [CoinGecko API](https://www.coingecko.com/en/api/documentation) (free tier):
+| Technology | Purpose |
+|-----------|---------|
+| React 18 | UI framework with hooks |
+| Vite 5 | Build tool & dev server |
+| CoinGecko API | Real-time crypto prices |
+| CSS3 | Custom dark theme |
+| localStorage | Client-side persistence |
 
-- **No API key required**
-- **Endpoints used:**
-  - `/coins/markets` — Get coin prices
-  - `/simple/price` — Get current prices for holdings
-  - `/search` — Search coins
+## 📡 API Integration
 
-## 📝 How to Use
+Uses [CoinGecko API v3](https://www.coingecko.com/en/api/documentation) (free, no key required):
 
-1. Click **"+ Add Token"** button
-2. Search for a cryptocurrency (e.g., Bitcoin, Ethereum)
-3. Enter the amount you hold
-4. Optionally enter your buy price for P/L calculation
-5. Click **"Add to Portfolio"**
-6. View your portfolio value and profit/loss
+- `GET /simple/price` — Batch price fetch with 24h change & market cap
+- `GET /search` — Token search with autocomplete
+- Rate limit: ~10-30 requests/minute (free tier)
+- Auto-refresh: 60-second intervals
 
-## 🎨 Customization
+## 🎯 Usage
 
-### Change refresh interval
-In `App.jsx`, modify:
-```javascript
-const interval = setInterval(fetchPrices, 60000) // Change 60000 (ms)
-```
+1. **Add tokens** — Click "+ Add Token", search or select from popular coins
+2. **Enter amount** — Input your holdings amount
+3. **Set buy price** (optional) — Enter your average buy price for P/L tracking
+4. **Monitor portfolio** — View real-time values, 24h changes, and profit/loss
+5. **Switch currency** — Toggle between USD, IDR, EUR, BTC, ETH display
 
-### Change default currency
-In `App.jsx`, modify:
-```javascript
-const [currency, setCurrency] = useState('usd') // Change to 'idr', 'eur', etc.
-```
+## 🛣️ Roadmap
 
-## 📝 What I Learned
-
-- React hooks (useState, useEffect)
-- API integration with fetch
-- localStorage for data persistence
-- Modal/dialog implementation
-- State management in React
-- Vite build tool
-
-## 🤝 Contributing
-
-Contributions are welcome! Feel free to:
-1. Fork the repository
-2. Create a feature branch
-3. Submit a pull request
+- [ ] MetaMask wallet integration for auto-detection
+- [ ] Multi-chain wallet tracking (Ethereum, BSC, Polygon)
+- [ ] Portfolio charts (pie chart allocation, line chart history)
+- [ ] DeFi position monitoring
+- [ ] Price alerts
+- [ ] Export to CSV/PDF
+- [ ] NFT portfolio tracking
 
 ## 📄 License
 
-This project is open source and available under the [MIT License](LICENSE).
+MIT License
 
 ---
 
-<div align="center">
-
-**Built with ❤️ by [RimuroHengky](https://github.com/rizaahmad25)**
-
-</div>
+Built with ❤️ by [Riza Ahmad](https://github.com/rizaahmad25) | Data from [CoinGecko](https://www.coingecko.com/)

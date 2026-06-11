@@ -1,8 +1,10 @@
 {
   "name": "token-portfolio-dashboard",
   "private": true,
-  "version": "1.0.0",
+  "version": "2.0.0",
   "type": "module",
+  "description": "Real-time cryptocurrency portfolio tracker with P&L analytics, multi-currency support, and CoinGecko API integration",
+  "keywords": ["crypto", "portfolio", "tracker", "coingecko", "react", "defi", "blockchain", "cryptocurrency", "real-time", "analytics"],
   "scripts": {
     "dev": "vite",
     "build": "vite build",

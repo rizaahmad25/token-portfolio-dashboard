@@ -368,7 +368,7 @@ function App() {
       )}
 
       <footer>
-        <p>Built with ❤️ by <a href="https://github.com/rizaahmad25" target="_blank">RimuroHengky</a></p>
+        <p>Built with ❤️ by <a href="https://github.com/rizaahmad25" target="_blank">Riza Ahmad</a></p>
         <p>Data from <a href="https://www.coingecko.com/" target="_blank">CoinGecko API</a></p>
       </footer>
     </div>
