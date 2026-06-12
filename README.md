@@ -7,6 +7,10 @@ A beautiful, real-time cryptocurrency portfolio tracker with multi-currency supp
 ![CoinGecko](https://img.shields.io/badge/API-CoinGecko-8DC647?style=flat-square&logo=coingecko)
 ![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
 
+## 🌐 Live Demo
+
+**🔗 [View Live →](https://rizaahmad25.github.io/token-portfolio-dashboard/)**
+
 ## ✨ Features
 
 - 📈 **Real-time Price Tracking** — Live prices from CoinGecko API, auto-refresh every 60 seconds
